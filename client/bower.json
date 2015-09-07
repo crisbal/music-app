@@ -1,0 +1,19 @@
+{
+  "name": "gulp-project",
+  "version": "0.0.0",
+  "authors": [
+    "Cristian Baldi <bld.cris.96@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "normalize-css": "normalize.css#~3.0.3"
+  }
+}
