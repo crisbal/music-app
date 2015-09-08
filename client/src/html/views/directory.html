@@ -1,0 +1,9 @@
+<h2>Directory Listing</h2>
+<h3>{{path}}</h3>
+<ul>
+    <li ng-repeat="folder in folders"><a href="/#/listen/{{path + folder}}/" >{{folder}}</a></li>
+</ul>  
+<h3>Files</h3>
+<ul>
+    <li ng-repeat="file in files"><button ng-click="songClick('http://localhost:8080/file/' + path + file)" >V</button>{{file}}</li>
+</ul>

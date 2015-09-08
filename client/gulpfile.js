@@ -3,7 +3,6 @@ var gulp = require('gulp');
 var minifyHTML = require("gulp-minify-html");
 var bowerFiles = require('main-bower-files');
 var inject = require('gulp-inject');
-var render = require('gulp-nunjucks-render');
 
 var minifyCSS = require("gulp-minify-css");
 var sass = require("gulp-sass");
@@ -20,8 +19,7 @@ gulp.task('buildHTML', function () {
 
   render.nunjucks.configure("./src/html/", {watch: false });
 
-  gulp.src(['./src/html/**/*.html','!./src/html/{layouts,parts}/**/*'])
-  .pipe(render())
+  gulp.src(['./src/html/**/*.html'])
   .pipe(inject(gulp.src(bowerFiles(), {read: false, cwd: "./build/"}), {name: 'bower'}))
   .pipe(inject(gulp.src('css/*.css', {read: false, cwd: "./build/"})))
   .pipe(inject(gulp.src('js/**/*.js', {read: false, cwd: "./build/"})))

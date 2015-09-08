@@ -1,15 +1,29 @@
-{% extends "layouts/base.html" %}
+<!DOCTYPE html>
+<html lang="en" ng-app="musicPlayer">
+<head>    
+  <title>Web Music Player</title>
 
+  <meta charset="UTF-8">  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <!-- bower:css --> 
+  <!-- endinject -->
 
-{% block title %}
-Title
-{% endblock %}
+  <!-- inject:css -->
+  <!-- endinject -->
+</head>
+<body>
+  <header ng:controller="PlayerController">
+    <audio id="player" controls="controls">
+      Your browser does not support the <code>audio</code> element.
+      <source id="playerSource" src="http://localhost:8080/file/Music/I%20Cani/I%20Cani%20-%20I%20Pariolini%20di%2018%20anni.mp3" type="audio/wav">
+    </audio>
+  </header>
+  <div ng-view></div>
+  <!-- bower:js -->
+  <!-- endinject -->
 
-{% block metaDescription %}
-Description
-{% endblock %}
-
-
-{% block body %}
-<h1>It Works!</h1>
-{% endblock %}
+  <!-- inject:js -->
+  <!-- endinject -->
+</body>
+</html>
